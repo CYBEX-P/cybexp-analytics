@@ -1,0 +1,6 @@
+{
+    "mongo": { 
+        "mongo_url" : "mongodb://localhost:27017/",
+        "tahoe_db" : "tahoe_db"
+  }
+}

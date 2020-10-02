@@ -2,6 +2,7 @@
 
 from queue import Queue
 import time, logging, copy, random, os, pdb
+from filters import filt_cowrie  
 
 def exponential_backoff(n):
     s = min(3600, (2 ** n) + (random.randint(0, 1000) / 1000))
@@ -19,6 +20,9 @@ def infinite_worker(q):
             else:
                 n_failed_attempts = 0
 
+        except (KeyboardInterrupt, SystemExit):
+            raise
+
         except Exception as exception:
             logging.error("proc.analytics.infinite_worker: ", exc_info=True)
             exponential_backoff(n_failed_attempts)
@@ -27,35 +31,26 @@ def infinite_worker(q):
         q.task_done()
         q.put(func)
 
-def analytics(config):
-    try:
-        os.environ["_MONGO_URL"] = config.pop("mongo_url")
-        os.environ["_TAHOE_DB"] = config.pop("analytics_db", "tahoe_db")
-        os.environ["_TAHOE_COLL"] = config.pop("analytics_coll", "instances")
-
-        # Don't move the next statement to top, see github issue #5
-        from filters import filt_misp, filt_cowrie , filt_openphish 
-
+def analytics():
+    try:       
         q = Queue()
-        q.put(filt_misp)
         q.put(filt_cowrie)
-        q.put(filt_openphish)
-
+        
         infinite_worker(q)
 
-    except Exception: logging.error("proc.analytics.analytics: ", exc_info=True)
+    except (KeyboardInterrupt, SystemExit):
+        raise
+
+    except Exception:
+        logging.error("proc.analytics.analytics: ", exc_info=True)
 
 if __name__ == "__main__":
-    analytics_config = { 
-		"mongo_url" : "mongodb://mongo1,mongo2,mongo2:27020/?replicaSet=rs0",
-		"analytics_db" : "tahoe_db",
-		"analytics_coll" : "instances"
-            }
 
-
-    logging.basicConfig(filename = '../proc.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s:%(message)s') # filename = '../proc.log',
+##    logging.basicConfig(filename = '../proc.log')
+    logging.basicConfig(level=logging.DEBUG,
+                        format='%(asctime)s %(levelname)s:%(message)s')
  
-    analytics(copy.deepcopy(analytics_config))
+    analytics()
 
     
 
