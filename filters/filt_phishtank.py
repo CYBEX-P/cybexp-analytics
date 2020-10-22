@@ -159,7 +159,7 @@ def convert_to_tahoe_and_archive(phishtank_record):
     )
 
 
-def archive_all_threat_data(backend =_BACKEND):
+def filt_phishtank(backend =_BACKEND):
     sub_type="phishtank"
     filt_id="1f8169b1-2d02-4806-91ee-5299d02aa414"
 
