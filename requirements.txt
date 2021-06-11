@@ -6,4 +6,3 @@ pyjwt==2.0.1
 pymongo==3.11.3
 sentinels==1.0.0
 six==1.15.0
-tahoe==0.8.0
