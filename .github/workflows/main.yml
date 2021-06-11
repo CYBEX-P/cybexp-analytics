@@ -33,8 +33,15 @@ jobs:
         with:
           python-version: 3.9
           
+      - uses: actions/checkout@master
+        with:
+          name: CYBEX-P/tahoe
+          ref: refs/heads/release
+                
       - name: Upgrade PIP & Install Dependencies
         run: |
+          cd tahoe
+          python setup.py install
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
         
