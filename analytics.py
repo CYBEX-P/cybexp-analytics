@@ -9,19 +9,22 @@ import time
 from filters import set_filter_backend, Cowrie, Email, OpenPhishFeed, \
     PhishTankFeed, Sighting
 
+
 # Logging
 # -------
 
-##logging.basicConfig(filename = 'analytics.log') 
+logging.basicConfig(filename = 'analytics.log') 
 logging.basicConfig(level=logging.ERROR,
     format='%(asctime)s %(levelname)s %(filename)s:%(lineno)s' \
     ' - %(funcName)() --  %(message)s')
 
+
 # Initialize Backends
 # -------------------
 
-def set_analytics_backend(_backend):
-    set_filter_backend(_backend)
+def set_analytics_backend(backend):
+    set_filter_backend(backend)
+
 
 # Code
 # ----
@@ -79,8 +82,8 @@ def analytics():
 if __name__ == "__main__":
 
     import loadconfig
-    B = loadconfig.get_tahoe_backend()
-    set_analytics_backend(B)
+    analytics_backend = loadconfig.get_tahoe_backend()
+    set_analytics_backend(analytics_backend)
 
     analytics()
 

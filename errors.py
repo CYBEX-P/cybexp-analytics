@@ -1,0 +1,3 @@
+
+class BackendNotSetError(Exception):
+    pass

@@ -1,0 +1,1891 @@
+Delivered-To: fsadique@nevada.unr.edu
+Received: by 2002:a17:90a:fd07:0:0:0:0 with SMTP id cv7csp1122741pjb;
+        Mon, 5 Apr 2021 13:38:21 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJwgfHUJdWsVNNS4sUt3Ag4RTN5k4+HtB+btV77FkyAENHXl9fmxwe77k/0X+lwWjue7Ukzt
+X-Received: by 2002:a37:4553:: with SMTP id s80mr26048716qka.167.1617655101202;
+        Mon, 05 Apr 2021 13:38:21 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1617655101; cv=none;
+        d=google.com; s=arc-20160816;
+        b=0Ijk0K2ImAmsBg/OC9ADGPlcuBTGZxUQV6mFl2Rq+UhyXW8cgfB4gVZ+Qze4NWagWF
+         wsUqjtzl5PJiRdJT5mG7OcGL68NeMWymMuiOMQ/+ODUmEYpA9pXc4rrtn/5cfL1PkYVl
+         ihMQL6qoo/d/3cceB3j752wpf/vZWtyw+Hl+wtw1hIa+aTh2BJczkjk10YRK+y0gE3xL
+         muO8ngCuQ2vyy/GOaKM4tsd3M85qtWP0nn5HdmzDW8VzgoHFqiNG8cYCKTafBXKa9k3d
+         wdKbFlocdZgGEAqGjZGDYpLKR/YI8LOXq/CYoZq08QnwQ59hmNMyPKHVcJHqeYHKAoiy
+         l5OQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:subject:from:to:reply-to:message-id:sender:date
+         :list-unsubscribe:list-unsubscribe-post:dkim-signature;
+        bh=KPTDW9Rc0C6VA+fRifzIsABoh2J8ZHVBDOx0ooOS+vc=;
+        b=aJSXK3HSW/4s7q0nuLAkv9M2RPsok2wNGvbR1qACXudMibWuEoGR5Odgj4ZxCf9GHS
+         QrImcrSzdy6QMtTAaKoq0yNuO7fw8ySPtPeoguxnw5LiHqmfBOtdit4LPe/onZp/qnWf
+         2+3Zu7sBB8IVIvE47ggCVIV24nLaX500TqGREPsruaqYY6I2YTSCztHNjOnaJXGfgebM
+         +YsXyZmT1Vdcm6HjCWcVH7Hmwf7ed+TLhK1nhd+nWxAkfaPHiiKFjvSHYalEyiegkMUS
+         JV+ERw4xnHzctaPCRMQl0OKdbsqtHxWqkvMDU5a0mNwfIAtcng9Vu9G853nNWshgeNYM
+         PIRQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mail.joinhandshake.com header.s=mx header.b=V9mYgHFc;
+       spf=pass (google.com: domain of bounce+a51d5f.88cb8-fsadique=nevada.unr.edu@mail.joinhandshake.com designates 159.135.237.56 as permitted sender) smtp.mailfrom="bounce+a51d5f.88cb8-fsadique=nevada.unr.edu@mail.joinhandshake.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=joinhandshake.com
+Return-Path: <bounce+a51d5f.88cb8-fsadique=nevada.unr.edu@mail.joinhandshake.com>
+Received: from m237-56.mailgun.net (m237-56.mailgun.net. [159.135.237.56])
+        by mx.google.com with UTF8SMTPS id f8si5367493qtq.289.2021.04.05.13.38.18
+        for <fsadique@nevada.unr.edu>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 05 Apr 2021 13:38:21 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce+a51d5f.88cb8-fsadique=nevada.unr.edu@mail.joinhandshake.com designates 159.135.237.56 as permitted sender) client-ip=159.135.237.56;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mail.joinhandshake.com header.s=mx header.b=V9mYgHFc;
+       spf=pass (google.com: domain of bounce+a51d5f.88cb8-fsadique=nevada.unr.edu@mail.joinhandshake.com designates 159.135.237.56 as permitted sender) smtp.mailfrom="bounce+a51d5f.88cb8-fsadique=nevada.unr.edu@mail.joinhandshake.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=joinhandshake.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mail.joinhandshake.com; q=dns/txt; s=mx; t=1617655100; h=Content-Type: Mime-Version: Subject: From: To: Reply-To: Message-Id: Sender: Date: List-Unsubscribe: List-Unsubscribe-Post; bh=KPTDW9Rc0C6VA+fRifzIsABoh2J8ZHVBDOx0ooOS+vc=; b=V9mYgHFc3j1shrEl1uapjlVjF56e9GGRjfy5P4CgUFgUJolvy1LgQzpBoTtnPXaImNW9Cdtu Y1naHUAI1HHlfZpYrxvKJ5/9bVTWOHYfmVCpd9XKvPz6051DjO1B86RbMXosTJd8SEwwUHfG SZzcUVMYpvQLjcxaWJEZekoOJVM=
+X-Mailgun-Sending-Ip: 159.135.237.56
+X-Mailgun-Sid: WyJjMWEyMSIsICJmc2FkaXF1ZUBuZXZhZGEudW5yLmVkdSIsICI4OGNiOCJd
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <mailto:u+mq6tqoddmi4cm2j5giydemjqgqydkmrqgm2dcmrogexdoqkdhfbtankgifbdcrjzgjbdajjugbwwc2lmfzvg62lonbqw4zdtnbqwwzjomnxw2jtihvqtkntbmnrdqnbxgy3wcyrvgy2ggzjqgjstazdfgiztqzrzgfrtejtshvthgylenfyxkzjfgqyg4zlwmfsgcltvnzzc4zleouthipjthe2c2u3dnbxw63bgnbqw4zdtnbqwwzk7nvqxg427mvwwc2lml5uwipjygi4dmmrv@mail.joinhandshake.com>, <https://link.mailgun.com/u/eJw9zUESgiAUANDTxC7m8wWEBQt16gIdwPkCjZTCJNn5s00XeC84Y_xkWHIIKECCQmikQC542w12AHXtenGx2MNJwkpp4Y-S8kw51JmekfuystmR0nQwstUtTUpLHwEjhIiNuVvhkW3uXimk1x4PJscPBeJ73ngMO3u7xsrzzc-lLOwvjyvVOsZfOabgDBqN6gs87TW6>
+X-Mailgun-Batch-Id: 606b74448166b7eff7dba5a6
+Received: by luna.mailgun.net with HTTP; Mon, 05 Apr 2021 20:34:12 +0000
+Date: Mon, 05 Apr 2021 20:34:12 +0000
+Sender: handshake@mail.joinhandshake.com
+Message-Id: <20210405203412.1.7AC9C05FAB1E92B0@mail.joinhandshake.com>
+X-Mailgun-Variables: {"handshake_mass_email_id": "828625"}
+Reply-To: nvcareerstudio@unr.edu
+X-Mailgun-Tag: 394-School
+To: fsadique@nevada.unr.edu
+From: "Gina Russo via joinhandshake.com" <handshake@mail.joinhandshake.com>
+Subject: STEM and CABNR Majors- Employers are Hiring!
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary="538429b15b95401a8498cca427e3d0e1"
+
+--538429b15b95401a8498cca427e3d0e1
+Content-Type: text/plain; charset="utf-8"
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+
+table.button table td {
+  background: #003580;
+  border-color: #003580;
+  color: white;
+}
+table.button table td a {
+  border-color: #003580;
+  color: white;
+}
+a { color: #003580; }
+a:hover { color: #19498c; }
+a:active { color: #19498c; }
+a:visited { color: #000; }
+table p a:visited,
+table div a:visited {
+  color: #003580;
+}
+table.menu th.menu-item a { color: #003580; }
+.wrapper.banner { background: #003580; }
+table.button:hover table tr td a,
+table.button:active table tr td a,
+table.button table tr td a:visited,
+table.button.large:hover table tr td a,
+table.button.large:active table tr td a,
+table.button.large table tr td a:visited {
+  color: white;
+}
+table.button:hover table td,
+table.button:visited table td,
+table.button:active table td {
+  background: #19498c;
+  color: white;
+}
+table.button:hover table a,
+table.button:visited table a,
+table.button:active table a {
+  border-color: #19498c;
+}
+p.hs-content-type,
+span.colorize-high-contrast {
+  color: #003580;
+}
+img.masked {
+  background: #003580;
+}
+
+
+
+
+ =20
+
+=C2=A0
+
+ =20
+
+    Need a summer job or internship? Looking for your first career move aft=
+er graduation? Opportunities related to your college and major are below!=
+=C2=A0Find more by logging into Handshake.
+
+ =20
+
+
+
+=C2=A0
+
+ =20
+
+   =20
+     =20
+        Log on to Handshake (NetID)
+     =20
+   =20
+ =20
+
+
+
+=C2=A0
+=C2=A0
+=C2=A0
+
+ =20
+
+    As of 4/5/2021, the following positions are current. If Handshake shows=
+ a position expired, the position has closed. If you need assistance with a=
+ny of these resources, please contact us at careerhelp@unr.edu
+
+ =20
+
+
+
+=C2=A0
+=C2=A0
+
+
+ =20
+
+=C2=A0
+
+ =20
+
+    Positions in Reno/Sparks
+ =20
+
+
+
+=C2=A0
+
+ =20
+
+   =20
+Rubik is=C2=A0hiring a full-time, benefitted Environmental Consultant. For =
+more information go to rubikenv.com and contact Todd at info@rubikenv.com.
+ =20
+
+
+
+=C2=A0
+
+ =20
+
+   =20
+     =20
+        Environmental Consultant
+     =20
+   =20
+ =20
+
+
+
+=C2=A0
+
+ =20
+
+   =20
+Nevaka, Inc. is a Reno Startup and the developer of an app now available on=
+ the iOS and Android platforms. They seek a Software Developer and Engineer=
+ to help with coding the app. Remote work allowed.
+
+ =20
+
+
+
+=C2=A0
+
+ =20
+
+   =20
+     =20
+        Software Developer
+     =20
+   =20
+ =20
+
+
+
+=C2=A0
+
+ =20
+
+   =20
+The NSF GAIN Scholars program has opened applications for Fall 2021 to Ph.D=
+. students for participation in their summer 2021 training program. Learn m=
+ore here.=C2=A0Students will code apps, design and analyze experiments usin=
+g R programming language, analyze big data, and create immersive virtual re=
+ality videos of their graduate school research experiences.
+ =20
+
+
+
+=C2=A0
+
+ =20
+
+   =20
+     =20
+        NSF GAIN Scholar
+     =20
+   =20
+ =20
+
+
+
+=C2=A0
+
+ =20
+
+   =20
+Iridium Technology is a software firm seeking an Business Intellegence Cons=
+ultant/Developer to add to their team.=C2=A0Students with development skill=
+s and experience involving SQL Server (relational database, T-SQL, SSAS, SS=
+RS), HTML5, Angular JS, C# are encouraged to apply.
+ =20
+
+
+
+=C2=A0
+
+ =20
+
+   =20
+     =20
+        BI Developer/Consultant
+     =20
+   =20
+ =20
+
+
+
+=C2=A0
+=C2=A0
+=C2=A0
+
+
+ =20
+
+=C2=A0
+
+ =20
+
+    Positions Outside Reno/Sparks
+ =20
+
+
+
+=C2=A0
+
+ =20
+
+   =20
+The Nevada Division of State Parks has opened a spot for a Landscape Archit=
+ecture Intern to assist improvement projects across the state.=C2=A0This is=
+ a temporary full-time position designed to provide valuable, hands-on expe=
+rience with architecture.
+ =20
+
+
+
+=C2=A0
+
+ =20
+
+   =20
+     =20
+        Landscape Architecture Intern
+     =20
+   =20
+ =20
+
+
+
+=C2=A0
+
+ =20
+
+   =20
+The Great Basin Institute is an interdisciplinary field studies organizatio=
+n that has many jobs open in fields related to conservation practices.
+ =20
+
+
+
+=C2=A0
+
+ =20
+
+   =20
+     =20
+        Conservationist Application Website
+     =20
+   =20
+ =20
+
+
+
+=C2=A0
+
+ =20
+
+   =20
+Nevada City Engineering in California seeks an Autocad Draftsperson. Knowle=
+dge of autocad/GIS/a drafting program is needed as well as knowledge of lan=
+d use planning (zoning ordinances, master plans, planning and environmental=
+ studies).
+ =20
+
+
+
+=C2=A0
+
+ =20
+
+   =20
+     =20
+        Autocad Draftsperson
+     =20
+   =20
+ =20
+
+
+
+=C2=A0
+=C2=A0
+=C2=A0
+=C2=A0
+
+ =20
+
+    Log into Handshake to find more jobs & internships!
+ =20
+
+
+
+=C2=A0
+
+ =20
+
+   =20
+     =20
+        Log in to Handshake (NetID)
+     =20
+   =20
+ =20
+
+
+
+=C2=A0
+=C2=A0
+=C2=A0
+
+ =20
+
+    Connect With Us
+ =20
+
+
+
+=C2=A0
+
+ =20
+
+   =20
+=C2=B7=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0Facebook: https://email.mail.join=
+handshake.com/c/eJw9jksOgyAUAE9TdiWPJ1pcsFDTXqAHME8-kVYhher5q5vuJzNjtVJmUix=
+oBBQgoUaopEAu-K0b2gHqR9eLe4s9XCSsFBb-SiHOFG2Z6e24SSubNXqBUqmpag-Db3wDDRivbs=
+LUlSUj2aL9dLIXfMTdUHYul-9mQ2JZ-0I2fDZ3BKLbyRLfYubObuyrD-H1aeaUFvZvjiuVMrpzZ=
+gxWK1QN1j8Iiz6_
+
+
+=C2=B7=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0Twitter: @nvcareerstudio
+
+
+=C2=B7=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0Instagram: @nvcareerstudio
+
+
+=C2=B7=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0Email: nvcareerstudio@unr.edu
+
+
+=C2=B7=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0Website: https://email.mail.joinh=
+andshake.com/c/eJw9jksOwiAUAE8jOwk8oKULFm1jL-ABGj6vKdpCBOv51cS4n8xMMFp7p0k0=
+wIAzyRQwITlQTtt-7Eampn7glw4GdpJst3GjtxzTalOoq70j9Xknq-GNcAoda1u1tLBw0M47FUT=
+nQGmUnGzmSIViOE4weVsQCylmqTbEx4Efc8KXDZb-IPI0opPnq19z3sg_Nu-21hm_F3MMRoNuQL=
+0BUVU7_Q
+
+
+=C2=B7=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0=C2=A0Phone: (775) 682-7114
+
+The Nevada Career Studio (NCS) is the central career services office on cam=
+pus. Need help with your application materials?=C2=A0Request a Virtual Appo=
+intment on Handshake.=20
+
+For in-person needs, our Career Mentors are at the Nevada Career Studio in =
+PSAC 208 to help you. No appointment needed=E2=80=94just wear your face mas=
+k.=C2=A0Visit=C2=A0our website=C2=A0for hours of operation.
+
+ =20
+
+
+
+=C2=A0
+
+ =20
+
+
+
+
+  =C2=A0
+ =20
+   =20
+ =20
+    This email is being sent to Farhan Sadique at University of Nevada, Ren=
+o.
+   =20
+    Unsubscribe =E2=80=A2
+    Update preferences
+   =20
+    P.O. Box 40770, San Francisco, CA 94140
+--538429b15b95401a8498cca427e3d0e1
+Content-Type: text/html; charset="utf-8"
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" style=3D"min-height:100%;backg=
+round:#f5f5f5">
+<head>
+<meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"Content-Type">
+<meta content=3D"width=3Ddevice-width" name=3D"viewport">
+
+<style>@media only screen and (max-width: 664px) {
+.small-float-center{margin:0 auto !important;float:none !important;text-ali=
+gn:center !important}
+.small-text-center{text-align:center !important}
+.small-text-left{text-align:left !important}
+.small-text-right{text-align:right !important}
+.hide-for-large{display:block !important;width:auto !important;overflow:vis=
+ible !important;max-height:none !important;font-size:inherit !important;lin=
+e-height:inherit !important}
+table.body table.container .hide-for-large{display:table !important;width:1=
+00% !important}
+table.body table.container .row.hide-for-large{display:table !important;wid=
+th:100% !important}
+table.body table.container .callout-inner.hide-for-large{display:table-cell=
+ !important;width:100% !important}
+table.body table.container .show-for-large{display:none !important;width:0;=
+mso-hide:all;overflow:hidden}
+table.body img{width:auto;height:auto}
+table.body center{min-width:0 !important}
+table.body .container{width:95% !important}
+table.body .columns{height:auto !important;-moz-box-sizing:border-box;-webk=
+it-box-sizing:border-box;box-sizing:border-box;padding-left:64px !important=
+;padding-right:64px !important}
+table.body .column{height:auto !important;-moz-box-sizing:border-box;-webki=
+t-box-sizing:border-box;box-sizing:border-box;padding-left:64px !important;=
+padding-right:64px !important}
+table.body .columns .column{padding-left:0 !important;padding-right:0 !impo=
+rtant}
+table.body .columns .columns{padding-left:0 !important;padding-right:0 !imp=
+ortant}
+table.body .column .column{padding-left:0 !important;padding-right:0 !impor=
+tant}
+table.body .column .columns{padding-left:0 !important;padding-right:0 !impo=
+rtant}
+table.body .collapse .columns{padding-left:0 !important;padding-right:0 !im=
+portant}
+table.body .collapse .column{padding-left:0 !important;padding-right:0 !imp=
+ortant}
+td.small-1{display:inline-block !important;width:8.33333% !important}
+th.small-1{display:inline-block !important;width:8.33333% !important}
+td.small-2{display:inline-block !important;width:16.66667% !important}
+th.small-2{display:inline-block !important;width:16.66667% !important}
+td.small-3{display:inline-block !important;width:25% !important}
+th.small-3{display:inline-block !important;width:25% !important}
+td.small-4{display:inline-block !important;width:33.33333% !important}
+th.small-4{display:inline-block !important;width:33.33333% !important}
+td.small-5{display:inline-block !important;width:41.66667% !important}
+th.small-5{display:inline-block !important;width:41.66667% !important}
+td.small-6{display:inline-block !important;width:50% !important}
+th.small-6{display:inline-block !important;width:50% !important}
+td.small-7{display:inline-block !important;width:58.33333% !important}
+th.small-7{display:inline-block !important;width:58.33333% !important}
+td.small-8{display:inline-block !important;width:66.66667% !important}
+th.small-8{display:inline-block !important;width:66.66667% !important}
+td.small-9{display:inline-block !important;width:75% !important}
+th.small-9{display:inline-block !important;width:75% !important}
+td.small-10{display:inline-block !important;width:83.33333% !important}
+th.small-10{display:inline-block !important;width:83.33333% !important}
+td.small-11{display:inline-block !important;width:91.66667% !important}
+th.small-11{display:inline-block !important;width:91.66667% !important}
+td.small-12{display:inline-block !important;width:100% !important}
+th.small-12{display:inline-block !important;width:100% !important}
+.columns td.small-12{display:block !important;width:100% !important}
+.column td.small-12{display:block !important;width:100% !important}
+.columns th.small-12{display:block !important;width:100% !important}
+.column th.small-12{display:block !important;width:100% !important}
+table.body td.small-offset-1{margin-left:8.33333% !important}
+table.body th.small-offset-1{margin-left:8.33333% !important}
+table.body td.small-offset-2{margin-left:16.66667% !important}
+table.body th.small-offset-2{margin-left:16.66667% !important}
+table.body td.small-offset-3{margin-left:25% !important}
+table.body th.small-offset-3{margin-left:25% !important}
+table.body td.small-offset-4{margin-left:33.33333% !important}
+table.body th.small-offset-4{margin-left:33.33333% !important}
+table.body td.small-offset-5{margin-left:41.66667% !important}
+table.body th.small-offset-5{margin-left:41.66667% !important}
+table.body td.small-offset-6{margin-left:50% !important}
+table.body th.small-offset-6{margin-left:50% !important}
+table.body td.small-offset-7{margin-left:58.33333% !important}
+table.body th.small-offset-7{margin-left:58.33333% !important}
+table.body td.small-offset-8{margin-left:66.66667% !important}
+table.body th.small-offset-8{margin-left:66.66667% !important}
+table.body td.small-offset-9{margin-left:75% !important}
+table.body th.small-offset-9{margin-left:75% !important}
+table.body td.small-offset-10{margin-left:83.33333% !important}
+table.body th.small-offset-10{margin-left:83.33333% !important}
+table.body td.small-offset-11{margin-left:91.66667% !important}
+table.body th.small-offset-11{margin-left:91.66667% !important}
+table.body table.columns td.expander{display:none !important}
+table.body table.columns th.expander{display:none !important}
+table.body .right-text-pad{padding-left:10px !important}
+table.body .text-pad-right{padding-left:10px !important}
+table.body .left-text-pad{padding-right:10px !important}
+table.body .text-pad-left{padding-right:10px !important}
+table.menu{width:100% !important}
+table.menu td{width:auto !important;display:inline-block !important}
+table.menu th{width:auto !important;display:inline-block !important}
+table.menu.vertical td{display:block !important}
+table.menu.vertical th{display:block !important}
+table.menu.small-vertical td{display:block !important}
+table.menu.small-vertical th{display:block !important}
+table.menu[align=3D"center"]{width:auto !important}
+table.button.small-expand{width:100% !important}
+table.button.small-expanded{width:100% !important}
+table.button.small-expand table{width:100%}
+table.button.small-expanded table{width:100%}
+table.button.small-expand table a{text-align:center !important;width:100% !=
+important;padding-left:0 !important;padding-right:0 !important}
+table.button.small-expanded table a{text-align:center !important;width:100%=
+ !important;padding-left:0 !important;padding-right:0 !important}
+table.button.small-expand center{min-width:0}
+table.button.small-expanded center{min-width:0}
+th.columns.first.small-12{padding-left:16px !important}
+th.columns.last.small-12{padding-right:16px !important}
+table.body img.icon-20{width:20px;height:20px}
+}
+table.button:hover table tr td a{color:#ffffff}
+table.button:active table tr td a{color:#ffffff}
+table.button table tr td a:visited{color:#ffffff}
+table.button.tiny:hover table tr td a{color:#ffffff}
+table.button.tiny:active table tr td a{color:#ffffff}
+table.button.tiny table tr td a:visited{color:#ffffff}
+table.button.small:hover table tr td a{color:#ffffff}
+table.button.small:active table tr td a{color:#ffffff}
+table.button.small table tr td a:visited{color:#ffffff}
+table.button.large:hover table tr td a{color:#ffffff}
+table.button.large:active table tr td a{color:#ffffff}
+table.button.large table tr td a:visited{color:#ffffff}
+table.button:hover table td{background:#f73b33;color:#ffffff}
+table.button:visited table td{background:#f73b33;color:#ffffff}
+table.button:active table td{background:#f73b33;color:#ffffff}
+table.button:hover table a{border:0 solid #f73b33}
+table.button:visited table a{border:0 solid #f73b33}
+table.button:active table a{border:0 solid #f73b33}
+table.button.secondary:hover table td{background:#919191;color:#ffffff}
+table.button.secondary:hover table a{border:0 solid #919191}
+table.button.secondary:hover table td a{color:#ffffff}
+table.button.secondary:active table td a{color:#ffffff}
+table.button.secondary table td a:visited{color:#ffffff}
+table.button.success:hover table td{background:#004d33}
+table.button.success:hover table a{border:0 solid #004d33}
+table.button.alert:hover table td{background:#99000d}
+table.button.alert:hover table a{border:0 solid #99000d}
+table.button.warning:hover table td{background:#cc8800}
+table.button.warning:hover table a{border:0px solid #cc8800}
+.thumbnail:hover{box-shadow:0 0 6px 1px rgba(0,85,204,0.5)}
+.thumbnail:focus{box-shadow:0 0 6px 1px rgba(0,85,204,0.5)}
+table.button.secondary:hover table td{background:#dcdcdc;border-color:#dcdc=
+dc;color:rgba(8,8,8,0.79)}
+table.button.secondary table tr td a:visited{color:rgba(8,8,8,0.79)}
+table.button.secondary:hover table tr td a{color:rgba(8,8,8,0.79)}
+table.button.secondary:hover table tr td a:visited{color:rgba(8,8,8,0.79)}
+a:hover{color:#19498c}
+a:active{color:#19498c}
+a:visited{color:#000}
+table p a:visited{color:#003580}
+table div a:visited{color:#003580}
+table.button:hover table tr td a{color:white}
+table.button:active table tr td a{color:white}
+table.button table tr td a:visited{color:white}
+table.button.large:hover table tr td a{color:white}
+table.button.large:active table tr td a{color:white}
+table.button.large table tr td a:visited{color:white}
+table.button:hover table td{background:#19498c;color:white}
+table.button:visited table td{background:#19498c;color:white}
+table.button:active table td{background:#19498c;color:white}
+table.button:hover table a{border-color:#19498c}
+table.button:visited table a{border-color:#19498c}
+table.button:active table a{border-color:#19498c}</style></head>
+<body style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMa=
+cSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans=
+-serif;min-width:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:10=
+0%;margin:0;padding:0;-moz-box-sizing:border-box;-webkit-box-sizing:border-=
+box;box-sizing:border-box;width:100% !important">
+<table class=3D"body" data-made-with-foundation=3D"" style=3D"border-spacin=
+g:0;border-collapse:collapse;padding:0;vertical-align:top;text-align:left;b=
+ackground:#f5f5f5;height:100%;width:100%">
+<tr style=3D"padding:0;vertical-align:top;text-align:left">
+<td align=3D"center" class=3D"center" valign=3D"top" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vertical-al=
+ign:top;text-align:left">
+
+<table class=3D"container" style=3D"border-spacing:0;border-collapse:collap=
+se;padding:0;vertical-align:top;text-align:left;background:#ffffff;width:60=
+0px;margin:0 auto;text-align:inherit"><tr style=3D"padding:0;vertical-align=
+:top;text-align:left"><td style=3D"font-family:&quot;Suisse Int'l&quot;, -a=
+pple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvet=
+ica Neue&quot;, sans-serif;padding:0;vertical-align:top;text-align:left">
+<table class=3D"wrapper" style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td class=3D"wrapper-inner" style=
+=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont=
+, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padd=
+ing:0;vertical-align:top;text-align:left">
+  <div style=3D"text-align:center;" class=3D"float-center"><a target=3D"_bl=
+ank" href=3D"https://email.mail.joinhandshake.com/c/eJw9j0tuwzAMRE9j7WpIsvx=
+baOGk9QV6AIO2mFipJaX61Nev4jQFCAJ85GCGSnbdMndES045o4LWnFaC8ZKV7XDuz7QehxP76P=
+mJFoIa0Ft5c9quYFVY4QvLxRmyStoI1kDVtYCzEu3M8HJpWtqCYD2d65psco3xHopqKPiYa9_3M=
+llfokp5WsAj-qIaN5f7Oy14k6KZgkt-wQwMhDA9zPPRc2VQ6WTyCh_4Dy7ORrQx0453Da9fGMwd=
+9NVmnqyeIvgrRlTTIQ3Ey0sApb8T5g8t_oCCVzQSZdWLt89ldW4j_09PR55DPmkln2a_D8Vqtw"=
+ style=3D"color:#003580"><img src=3D"https://s3.amazonaws.com/handshake.pro=
+duction/app/public/assets/user_images/1883994/original/data.?1614724572" al=
+t=3D"" style=3D"outline:none;text-decoration:none;-ms-interpolation-mode:bi=
+cubic;width:auto;max-width:100%;clear:both;display:block;border:none;margin=
+:0 auto;float:none;text-align:center;max-width:100%;width:600px;" width=3D"=
+600" class=3D"float-center"></a></div>
+</td></tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;ver=
+tical-align:top;text-align:left;padding:0;width:100%;position:relative;disp=
+lay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+  <th class=3D"small-12 large-12 columns first last" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;text-align:left;font-=
+weight:normal;margin:0 auto;padding-bottom:16px;width:536px;padding-left:32=
+px;padding-right:32px;padding-bottom:0px;padding-left:64px;padding-right:64=
+px"><table style=3D"border-spacing:0;border-collapse:collapse;padding:0;ver=
+tical-align:top;text-align:left;width:100%"><tr style=3D"padding:0;vertical=
+-align:top;text-align:left">
+<th style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-s=
+erif;text-align:left;font-weight:normal">
+    <div>Need a summer job or internship? Looking for your first career mov=
+e after graduation? Opportunities related to your college and major are bel=
+ow!&nbsp;<strong>Find more by logging into Handshake.</strong>
+</div>
+  </th>
+<th class=3D"expander" style=3D"font-family:&quot;Suisse Int'l&quot;, -appl=
+e-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica=
+ Neue&quot;, sans-serif;text-align:left;font-weight:normal;visibility:hidde=
+n;width:0;padding:0 !important"></th>
+</tr></table></th>
+</tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;ver=
+tical-align:top;text-align:left;padding:0;width:100%;position:relative;disp=
+lay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+  <th class=3D"small-12 large-12 columns first last" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;text-align:left;font-=
+weight:normal;margin:0 auto;padding-bottom:16px;width:536px;padding-left:32=
+px;padding-right:32px;padding-bottom:0px;padding-left:64px;padding-right:64=
+px"><table style=3D"border-spacing:0;border-collapse:collapse;padding:0;ver=
+tical-align:top;text-align:left;width:100%"><tr style=3D"padding:0;vertical=
+-align:top;text-align:left">
+<th style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-s=
+erif;text-align:left;font-weight:normal">
+   =20
+      <table class=3D"radius button float-center" style=3D"border-spacing:0=
+;border-collapse:collapse;padding:0;vertical-align:top;text-align:left;floa=
+t:none;text-align:center;width:auto;margin:0 0 16px 0;margin:0 auto"><tr st=
+yle=3D"padding:0;vertical-align:top;text-align:left"><td style=3D"font-fami=
+ly:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe=
+ UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vertica=
+l-align:top;text-align:left"><table style=3D"border-spacing:0;border-collap=
+se:collapse;padding:0;vertical-align:top;text-align:left;width:100%"><tr st=
+yle=3D"padding:0;vertical-align:top;text-align:left"><td style=3D"font-fami=
+ly:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe=
+ UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vertica=
+l-align:top;text-align:left;color:#ffffff;background:#f73b33;border:2px sol=
+id #f73b33;background:#003580;border-color:#003580;color:white;border-radiu=
+s:3px;border:none"><a href=3D"https://email.mail.joinhandshake.com/c/eJxlj0=
+FyhCAQRU8ju1jQqGEWLJyZeIEcwGoBRyYCE4GcP2gm2aSqV6_r93-tpRBqEsRKoMBoQ1ugvGFQs=
+_q1v5wutB36M3s7wZlWDXVo1_oerF_Q67jgh6lVcGSRfGKiQTrNwAWFGYUwDQBQhkp0nWJklUtK=
+j1jxvoKhTPbb_0MVH9awVfzKKuhycmMMeVOmAIcxjnu72Z4rZ7TNJXE1O35CFXwyPhUqQHTQ_mJ=
+0D7Q3X3j2dky43UwyejyikWxyjqjtZzblRW--UGO9-xmdSZL81Ly8qyWElfzJjofPER-tlj9l36=
+sBa1s" style=3D"color:#003580;font-family:&quot;Suisse Int'l&quot;, Helveti=
+ca, Arial, sans-serif;font-size:15px;font-weight:bold;color:#ffffff;text-de=
+coration:none;display:inline-block;padding:10px 20px 10px 20px;border:0 sol=
+id #254fa5;border-radius:3px;border-color:#003580;color:white">
+        Log on to Handshake (NetID)
+      </a></td></tr></table></td></tr></table>
+   =20
+  </th>
+<th class=3D"expander" style=3D"font-family:&quot;Suisse Int'l&quot;, -appl=
+e-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica=
+ Neue&quot;, sans-serif;text-align:left;font-weight:normal;visibility:hidde=
+n;width:0;padding:0 !important"></th>
+</tr></table></th>
+</tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"divider spacer " style=3D"border-spacing:0;border-collapse:=
+collapse;padding:0;vertical-align:top;text-align:left;width:100%;background=
+:#f5f5f5"><tr style=3D"padding:0;vertical-align:top;text-align:left"><td he=
+ight=3D"12" style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, B=
+linkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;=
+, sans-serif;padding:0;vertical-align:top;text-align:left;height:36px;mso-l=
+ine-height-rule:exactly;font-size:12px;line-height:12px;">&nbsp;</td></tr><=
+/table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;ver=
+tical-align:top;text-align:left;padding:0;width:100%;position:relative;disp=
+lay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+  <th class=3D"small-12 large-12 columns first last" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;text-align:left;font-=
+weight:normal;margin:0 auto;padding-bottom:16px;width:536px;padding-left:32=
+px;padding-right:32px;padding-bottom:0px;padding-left:64px;padding-right:64=
+px"><table style=3D"border-spacing:0;border-collapse:collapse;padding:0;ver=
+tical-align:top;text-align:left;width:100%"><tr style=3D"padding:0;vertical=
+-align:top;text-align:left">
+<th style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-s=
+erif;text-align:left;font-weight:normal">
+    <div>As of 4/5/2021, the following positions are current. If Handshake =
+shows a position expired, the position has closed. If you need assistance w=
+ith any of these resources, please contact us at <a href=3D"mailto:careerhe=
+lp@unr.edu" target=3D"_blank" style=3D"color:#003580"><strong>careerhelp@un=
+r.edu</strong></a>
+</div>
+  </th>
+<th class=3D"expander" style=3D"font-family:&quot;Suisse Int'l&quot;, -appl=
+e-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica=
+ Neue&quot;, sans-serif;text-align:left;font-weight:normal;visibility:hidde=
+n;width:0;padding:0 !important"></th>
+</tr></table></th>
+</tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"divider spacer " style=3D"border-spacing:0;border-collapse:=
+collapse;padding:0;vertical-align:top;text-align:left;width:100%;background=
+:#f5f5f5"><tr style=3D"padding:0;vertical-align:top;text-align:left"><td he=
+ight=3D"12" style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, B=
+linkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;=
+, sans-serif;padding:0;vertical-align:top;text-align:left;height:36px;mso-l=
+ine-height-rule:exactly;font-size:12px;line-height:12px;">&nbsp;</td></tr><=
+/table>
+
+<table class=3D"wrapper" style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td class=3D"wrapper-inner" style=
+=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont=
+, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padd=
+ing:0;vertical-align:top;text-align:left">
+  <div style=3D"text-align:center;" class=3D"float-center"><img src=3D"http=
+s://s3.amazonaws.com/handshake.production/app/public/assets/user_images/195=
+1225/original/data.?1617382246" alt=3D"Reno/Sparks" style=3D"outline:none;t=
+ext-decoration:none;-ms-interpolation-mode:bicubic;width:auto;max-width:100=
+%;clear:both;display:block;margin:0 auto;float:none;text-align:center;max-w=
+idth:100%;width:600px;" width=3D"600" class=3D"float-center"></div>
+</td></tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;ver=
+tical-align:top;text-align:left;padding:0;width:100%;position:relative;disp=
+lay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+  <th class=3D"small-12 large-12 columns first last" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;text-align:left;font-=
+weight:normal;margin:0 auto;padding-bottom:16px;width:536px;padding-left:32=
+px;padding-right:32px;padding-bottom:0px;padding-left:64px;padding-right:64=
+px"><table style=3D"border-spacing:0;border-collapse:collapse;padding:0;ver=
+tical-align:top;text-align:left;width:100%"><tr style=3D"padding:0;vertical=
+-align:top;text-align:left">
+<th style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-s=
+erif;text-align:left;font-weight:normal">
+    <h1 class=3D"text-center no-margin" style=3D"margin-top:0;margin-bottom=
+:0;margin-left:0;margin-right:0;text-align:center">Positions in Reno/Sparks=
+</h1>
+  </th>
+<th class=3D"expander" style=3D"font-family:&quot;Suisse Int'l&quot;, -appl=
+e-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica=
+ Neue&quot;, sans-serif;text-align:left;font-weight:normal;visibility:hidde=
+n;width:0;padding:0 !important"></th>
+</tr></table></th>
+</tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;ver=
+tical-align:top;text-align:left;padding:0;width:100%;position:relative;disp=
+lay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+  <th class=3D"small-12 large-12 columns first last" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;text-align:left;font-=
+weight:normal;margin:0 auto;padding-bottom:16px;width:536px;padding-left:32=
+px;padding-right:32px;padding-bottom:0px;padding-left:64px;padding-right:64=
+px"><table style=3D"border-spacing:0;border-collapse:collapse;padding:0;ver=
+tical-align:top;text-align:left;width:100%"><tr style=3D"padding:0;vertical=
+-align:top;text-align:left">
+<th style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-s=
+erif;text-align:left;font-weight:normal">
+    <div>
+<strong>Rubik</strong> is&nbsp;hiring a full-time, benefitted <strong>Envir=
+onmental Consultant</strong>. For more information go to <a href=3D"mailto:=
+info@rubikenv.com" target=3D"_blank" style=3D"color:#003580">rubikenv.com</=
+a> and contact Todd at <a href=3D"mailto:tleonard@rubikenv.com" target=3D"_=
+blank" style=3D"color:#003580">info@rubikenv.com</a>.</div>
+  </th>
+<th class=3D"expander" style=3D"font-family:&quot;Suisse Int'l&quot;, -appl=
+e-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica=
+ Neue&quot;, sans-serif;text-align:left;font-weight:normal;visibility:hidde=
+n;width:0;padding:0 !important"></th>
+</tr></table></th>
+</tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;ver=
+tical-align:top;text-align:left;padding:0;width:100%;position:relative;disp=
+lay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+  <th class=3D"small-12 large-12 columns first last" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;text-align:left;font-=
+weight:normal;margin:0 auto;padding-bottom:16px;width:536px;padding-left:32=
+px;padding-right:32px;padding-bottom:0px;padding-left:64px;padding-right:64=
+px"><table style=3D"border-spacing:0;border-collapse:collapse;padding:0;ver=
+tical-align:top;text-align:left;width:100%"><tr style=3D"padding:0;vertical=
+-align:top;text-align:left">
+<th style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-s=
+erif;text-align:left;font-weight:normal">
+   =20
+      <table class=3D"radius button float-center" style=3D"border-spacing:0=
+;border-collapse:collapse;padding:0;vertical-align:top;text-align:left;floa=
+t:none;text-align:center;width:auto;margin:0 0 16px 0;margin:0 auto"><tr st=
+yle=3D"padding:0;vertical-align:top;text-align:left"><td style=3D"font-fami=
+ly:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe=
+ UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vertica=
+l-align:top;text-align:left"><table style=3D"border-spacing:0;border-collap=
+se:collapse;padding:0;vertical-align:top;text-align:left;width:100%"><tr st=
+yle=3D"padding:0;vertical-align:top;text-align:left"><td style=3D"font-fami=
+ly:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe=
+ UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vertica=
+l-align:top;text-align:left;color:#ffffff;background:#f73b33;border:2px sol=
+id #f73b33;background:#003580;border-color:#003580;color:white;border-radiu=
+s:3px;border:none"><a href=3D"https://email.mail.joinhandshake.com/c/eJw9j0=
+2SgyAQRk-Du6H4UYMLFiYZLzAHoFrASCKQQcj5R53MVPXqdb3--jNSCD2KyklGGCU1aRjhNWWY4=
+lN_6S6kGfoz_ezYmaCaeHALvkcXZghmneFhsY6-mqVg0Bmgp7aBCUbWtVSMU6NFy_lUQy2qRc45=
+PxHvERu2SWV0Dxteu474sMSE-LVBrC3ZqzWWpO0GPKyr2jNteq-8Na5sxtXu-A11DNmGvFHBRMv=
+-zmjwT3C3sPESnMqQbjZbow51rZKcVjDuu9itWLAvMIBLSNiaUmXJu_rjS88xLtV_V3X8c-jKGf=
+kb9gOwCmf2" style=3D"color:#003580;font-family:&quot;Suisse Int'l&quot;, He=
+lvetica, Arial, sans-serif;font-size:15px;font-weight:bold;color:#ffffff;te=
+xt-decoration:none;display:inline-block;padding:10px 20px 10px 20px;border:=
+0 solid #254fa5;border-radius:3px;border-color:#003580;color:white">
+        Environmental Consultant
+      </a></td></tr></table></td></tr></table>
+   =20
+  </th>
+<th class=3D"expander" style=3D"font-family:&quot;Suisse Int'l&quot;, -appl=
+e-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica=
+ Neue&quot;, sans-serif;text-align:left;font-weight:normal;visibility:hidde=
+n;width:0;padding:0 !important"></th>
+</tr></table></th>
+</tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;ver=
+tical-align:top;text-align:left;padding:0;width:100%;position:relative;disp=
+lay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+  <th class=3D"small-12 large-12 columns first last" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;text-align:left;font-=
+weight:normal;margin:0 auto;padding-bottom:16px;width:536px;padding-left:32=
+px;padding-right:32px;padding-bottom:0px;padding-left:64px;padding-right:64=
+px"><table style=3D"border-spacing:0;border-collapse:collapse;padding:0;ver=
+tical-align:top;text-align:left;width:100%"><tr style=3D"padding:0;vertical=
+-align:top;text-align:left">
+<th style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-s=
+erif;text-align:left;font-weight:normal">
+    <div>
+<strong>Nevaka, Inc.</strong> is a Reno Startup and the developer of an app=
+ now available on the iOS and Android platforms. They seek a <strong>Softwa=
+re Developer and Engineer</strong> to help with coding the app. <strong>Rem=
+ote work allowed.</strong>
+</div>
+  </th>
+<th class=3D"expander" style=3D"font-family:&quot;Suisse Int'l&quot;, -appl=
+e-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica=
+ Neue&quot;, sans-serif;text-align:left;font-weight:normal;visibility:hidde=
+n;width:0;padding:0 !important"></th>
+</tr></table></th>
+</tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;ver=
+tical-align:top;text-align:left;padding:0;width:100%;position:relative;disp=
+lay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+  <th class=3D"small-12 large-12 columns first last" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;text-align:left;font-=
+weight:normal;margin:0 auto;padding-bottom:16px;width:536px;padding-left:32=
+px;padding-right:32px;padding-bottom:0px;padding-left:64px;padding-right:64=
+px"><table style=3D"border-spacing:0;border-collapse:collapse;padding:0;ver=
+tical-align:top;text-align:left;width:100%"><tr style=3D"padding:0;vertical=
+-align:top;text-align:left">
+<th style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-s=
+erif;text-align:left;font-weight:normal">
+   =20
+      <table class=3D"radius button float-center" style=3D"border-spacing:0=
+;border-collapse:collapse;padding:0;vertical-align:top;text-align:left;floa=
+t:none;text-align:center;width:auto;margin:0 0 16px 0;margin:0 auto"><tr st=
+yle=3D"padding:0;vertical-align:top;text-align:left"><td style=3D"font-fami=
+ly:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe=
+ UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vertica=
+l-align:top;text-align:left"><table style=3D"border-spacing:0;border-collap=
+se:collapse;padding:0;vertical-align:top;text-align:left;width:100%"><tr st=
+yle=3D"padding:0;vertical-align:top;text-align:left"><td style=3D"font-fami=
+ly:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe=
+ UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vertica=
+l-align:top;text-align:left;color:#ffffff;background:#f73b33;border:2px sol=
+id #f73b33;background:#003580;border-color:#003580;color:white;border-radiu=
+s:3px;border:none"><a href=3D"https://email.mail.joinhandshake.com/c/eJxlj9=
+FuhCAQRb9G32pgRIUHHtxt_YF-gEEZV7YCVqDfX9Zu-9JkkknOzZ25V0vO54mXRgIBShhpgNSMQ=
+kWrrr-KK2mG_kLfBFxIwYhVZqvu3rhVOR1W9YHV7G25SkoX0vGFtKBZi3NbM1DIoBN0ERPhTbnJ=
+NcY9FHVfwJBH7fv_Q5nf_RTyYsBEJ0hRD5s_ivq1LaBN0Y7Bp2PGDKwKYXzEweMpWdQm2SzhAz_=
+h7F1EFzPlwFtofrGyuzI3l3lyZozquGFEPZ7WUB5yCUqbz4S5s8MvpVWV3FGhTmWUtWAv7_Pq_V=
+b-pR_PPKd9NFr-PPsGpLFvjw" style=3D"color:#003580;font-family:&quot;Suisse I=
+nt'l&quot;, Helvetica, Arial, sans-serif;font-size:15px;font-weight:bold;co=
+lor:#ffffff;text-decoration:none;display:inline-block;padding:10px 20px 10p=
+x 20px;border:0 solid #254fa5;border-radius:3px;border-color:#003580;color:=
+white">
+        Software Developer
+      </a></td></tr></table></td></tr></table>
+   =20
+  </th>
+<th class=3D"expander" style=3D"font-family:&quot;Suisse Int'l&quot;, -appl=
+e-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica=
+ Neue&quot;, sans-serif;text-align:left;font-weight:normal;visibility:hidde=
+n;width:0;padding:0 !important"></th>
+</tr></table></th>
+</tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;ver=
+tical-align:top;text-align:left;padding:0;width:100%;position:relative;disp=
+lay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+  <th class=3D"small-12 large-12 columns first last" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;text-align:left;font-=
+weight:normal;margin:0 auto;padding-bottom:16px;width:536px;padding-left:32=
+px;padding-right:32px;padding-bottom:0px;padding-left:64px;padding-right:64=
+px"><table style=3D"border-spacing:0;border-collapse:collapse;padding:0;ver=
+tical-align:top;text-align:left;width:100%"><tr style=3D"padding:0;vertical=
+-align:top;text-align:left">
+<th style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-s=
+erif;text-align:left;font-weight:normal">
+    <div>
+<strong>The NSF GAIN Scholars program</strong> has opened applications for =
+Fall 2021 to Ph.D. students for participation in their summer 2021 training=
+ program. <a href=3D"https://email.mail.joinhandshake.com/c/eJw9kFtuhDAMRVc=
+Df4Py4vWRD2ZaNtAFIE8SIC1JpnmU7TfQmUqWLJ-rK19b8q4T967UnCCCEUM1QZRhUuGqHW79Dd=
+XjcMXvPbmigiEDeqs-nbYrWBlW-FKVcKZceQcEkGTAeixITyi-z7SVzYzmlgosWLnxNcZHKOhQk=
+DHXvu9Vsr5SMuVp8SBzA2l0CNrZcDDQ9hLE6jbw2Tduzhf0rS1Ik6KZgkteqAwMhDAduZR_SkZJ=
+nUyW1IGfUDgblY2ZdqRrSP3CYB6gF5t5snqK4BcVlZxOayg9nwNI_Z1UPt6qH5DwSl1GTnt2-cg=
+B3Vb-_2M685z2SUv-t-wXR_10rw" target=3D"_blank" style=3D"color:#003580">Lear=
+n more here</a>.&nbsp;Students will code apps, design and analyze experimen=
+ts using R programming language, analyze big data, and create immersive vir=
+tual reality videos of their graduate school research experiences.</div>
+  </th>
+<th class=3D"expander" style=3D"font-family:&quot;Suisse Int'l&quot;, -appl=
+e-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica=
+ Neue&quot;, sans-serif;text-align:left;font-weight:normal;visibility:hidde=
+n;width:0;padding:0 !important"></th>
+</tr></table></th>
+</tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;ver=
+tical-align:top;text-align:left;padding:0;width:100%;position:relative;disp=
+lay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+  <th class=3D"small-12 large-12 columns first last" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;text-align:left;font-=
+weight:normal;margin:0 auto;padding-bottom:16px;width:536px;padding-left:32=
+px;padding-right:32px;padding-bottom:0px;padding-left:64px;padding-right:64=
+px"><table style=3D"border-spacing:0;border-collapse:collapse;padding:0;ver=
+tical-align:top;text-align:left;width:100%"><tr style=3D"padding:0;vertical=
+-align:top;text-align:left">
+<th style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-s=
+erif;text-align:left;font-weight:normal">
+   =20
+      <table class=3D"radius button float-center" style=3D"border-spacing:0=
+;border-collapse:collapse;padding:0;vertical-align:top;text-align:left;floa=
+t:none;text-align:center;width:auto;margin:0 0 16px 0;margin:0 auto"><tr st=
+yle=3D"padding:0;vertical-align:top;text-align:left"><td style=3D"font-fami=
+ly:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe=
+ UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vertica=
+l-align:top;text-align:left"><table style=3D"border-spacing:0;border-collap=
+se:collapse;padding:0;vertical-align:top;text-align:left;width:100%"><tr st=
+yle=3D"padding:0;vertical-align:top;text-align:left"><td style=3D"font-fami=
+ly:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe=
+ UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vertica=
+l-align:top;text-align:left;color:#ffffff;background:#f73b33;border:2px sol=
+id #f73b33;background:#003580;border-color:#003580;color:white;border-radiu=
+s:3px;border:none"><a href=3D"https://email.mail.joinhandshake.com/c/eJw9kE=
+1ugzAQhU8DuyAzEDALL5K0XKAHQAOeglNsp_4p16-hSSVL9nxPb-aNpeB8GnmuBDAoWc3OwKq6h=
+KIs2sutu7Fzf7mW7x1cWVYzjWot7laZBY30C35RMVmdL6IeJcE4lZwAKl7yrm5ll94wdtCMLeSr=
+WEJ4-Ky6ZNCns21bEY0rSMZUzQ5lulBq5b2yxu8MlTn5abEruuTrV-uy6o1n0MSgB2-jmygBjd4=
+Pey5yT0mTVFEniXb8hJM1gUzYOwBv4PzCqB-oZpN4NGoI6GYKJIfD6nMnPj1K9R0pLW_oByW-Uu=
+dBVF19-kgB7Zr__8dw5Dnsg5Lib9gv_U90Yg" style=3D"color:#003580;font-family:&q=
+uot;Suisse Int'l&quot;, Helvetica, Arial, sans-serif;font-size:15px;font-we=
+ight:bold;color:#ffffff;text-decoration:none;display:inline-block;padding:1=
+0px 20px 10px 20px;border:0 solid #254fa5;border-radius:3px;border-color:#0=
+03580;color:white">
+        NSF GAIN Scholar
+      </a></td></tr></table></td></tr></table>
+   =20
+  </th>
+<th class=3D"expander" style=3D"font-family:&quot;Suisse Int'l&quot;, -appl=
+e-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica=
+ Neue&quot;, sans-serif;text-align:left;font-weight:normal;visibility:hidde=
+n;width:0;padding:0 !important"></th>
+</tr></table></th>
+</tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;ver=
+tical-align:top;text-align:left;padding:0;width:100%;position:relative;disp=
+lay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+  <th class=3D"small-12 large-12 columns first last" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;text-align:left;font-=
+weight:normal;margin:0 auto;padding-bottom:16px;width:536px;padding-left:32=
+px;padding-right:32px;padding-bottom:0px;padding-left:64px;padding-right:64=
+px"><table style=3D"border-spacing:0;border-collapse:collapse;padding:0;ver=
+tical-align:top;text-align:left;width:100%"><tr style=3D"padding:0;vertical=
+-align:top;text-align:left">
+<th style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-s=
+erif;text-align:left;font-weight:normal">
+    <div>
+<strong>Iridium Technology</strong> is a software firm seeking an <strong>B=
+usiness Intellegence Consultant/Developer</strong> to add to their team.&nb=
+sp;Students with development skills and experience involving SQL Server (re=
+lational database, T-SQL, SSAS, SSRS), HTML5, Angular JS, C# are encouraged=
+ to apply.</div>
+  </th>
+<th class=3D"expander" style=3D"font-family:&quot;Suisse Int'l&quot;, -appl=
+e-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica=
+ Neue&quot;, sans-serif;text-align:left;font-weight:normal;visibility:hidde=
+n;width:0;padding:0 !important"></th>
+</tr></table></th>
+</tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;ver=
+tical-align:top;text-align:left;padding:0;width:100%;position:relative;disp=
+lay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+  <th class=3D"small-12 large-12 columns first last" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;text-align:left;font-=
+weight:normal;margin:0 auto;padding-bottom:16px;width:536px;padding-left:32=
+px;padding-right:32px;padding-bottom:0px;padding-left:64px;padding-right:64=
+px"><table style=3D"border-spacing:0;border-collapse:collapse;padding:0;ver=
+tical-align:top;text-align:left;width:100%"><tr style=3D"padding:0;vertical=
+-align:top;text-align:left">
+<th style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-s=
+erif;text-align:left;font-weight:normal">
+   =20
+      <table class=3D"radius button float-center" style=3D"border-spacing:0=
+;border-collapse:collapse;padding:0;vertical-align:top;text-align:left;floa=
+t:none;text-align:center;width:auto;margin:0 0 16px 0;margin:0 auto"><tr st=
+yle=3D"padding:0;vertical-align:top;text-align:left"><td style=3D"font-fami=
+ly:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe=
+ UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vertica=
+l-align:top;text-align:left"><table style=3D"border-spacing:0;border-collap=
+se:collapse;padding:0;vertical-align:top;text-align:left;width:100%"><tr st=
+yle=3D"padding:0;vertical-align:top;text-align:left"><td style=3D"font-fami=
+ly:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe=
+ UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vertica=
+l-align:top;text-align:left;color:#ffffff;background:#f73b33;border:2px sol=
+id #f73b33;background:#003580;border-color:#003580;color:white;border-radiu=
+s:3px;border:none"><a href=3D"https://email.mail.joinhandshake.com/c/eJxlj0=
+tuxCAQRE8Du1gYYwwLFp5JfIEcAGGDx0wMOHxy_jDOJJtILbX0StVdpQVjy8ygFRjhFhHUY9SRF=
+jdtM4xXfkX9NF7aN44vCBDklN2be7B-U16nTX2YZgkObgIptHaIDisjM2XzyjXrO044awfas5XD=
+XWw5Hwl0I8BTHXUc_w9Vfg9zqosQijEZQDftIYLulQNMS3YyhRIXU4FTKclHHBOfkjPaFlcl88B=
+PuASfjc-VMswo7n-xcoeyN1958VZmFW8mGy1Pa4JRrElp-1lM7ezNl9KqKT42RheYRe318r5sIe=
+zwL70885x2abX4efYNlkFvfQ" style=3D"color:#003580;font-family:&quot;Suisse I=
+nt'l&quot;, Helvetica, Arial, sans-serif;font-size:15px;font-weight:bold;co=
+lor:#ffffff;text-decoration:none;display:inline-block;padding:10px 20px 10p=
+x 20px;border:0 solid #254fa5;border-radius:3px;border-color:#003580;color:=
+white">
+        BI Developer/Consultant
+      </a></td></tr></table></td></tr></table>
+   =20
+  </th>
+<th class=3D"expander" style=3D"font-family:&quot;Suisse Int'l&quot;, -appl=
+e-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica=
+ Neue&quot;, sans-serif;text-align:left;font-weight:normal;visibility:hidde=
+n;width:0;padding:0 !important"></th>
+</tr></table></th>
+</tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"48" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:48px;line-height:48px;">&nbsp;</td></tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"divider spacer " style=3D"border-spacing:0;border-collapse:=
+collapse;padding:0;vertical-align:top;text-align:left;width:100%;background=
+:#f5f5f5"><tr style=3D"padding:0;vertical-align:top;text-align:left"><td he=
+ight=3D"12" style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, B=
+linkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;=
+, sans-serif;padding:0;vertical-align:top;text-align:left;height:36px;mso-l=
+ine-height-rule:exactly;font-size:12px;line-height:12px;">&nbsp;</td></tr><=
+/table>
+
+<table class=3D"wrapper" style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td class=3D"wrapper-inner" style=
+=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont=
+, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padd=
+ing:0;vertical-align:top;text-align:left">
+  <div style=3D"text-align:center;" class=3D"float-center"><img src=3D"http=
+s://s3.amazonaws.com/handshake.production/app/public/assets/user_images/195=
+1229/original/data.?1617382305" alt=3D"Outside Reno" style=3D"outline:none;=
+text-decoration:none;-ms-interpolation-mode:bicubic;width:auto;max-width:10=
+0%;clear:both;display:block;margin:0 auto;float:none;text-align:center;max-=
+width:100%;width:600px;" width=3D"600" class=3D"float-center"></div>
+</td></tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;ver=
+tical-align:top;text-align:left;padding:0;width:100%;position:relative;disp=
+lay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+  <th class=3D"small-12 large-12 columns first last" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;text-align:left;font-=
+weight:normal;margin:0 auto;padding-bottom:16px;width:536px;padding-left:32=
+px;padding-right:32px;padding-bottom:0px;padding-left:64px;padding-right:64=
+px"><table style=3D"border-spacing:0;border-collapse:collapse;padding:0;ver=
+tical-align:top;text-align:left;width:100%"><tr style=3D"padding:0;vertical=
+-align:top;text-align:left">
+<th style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-s=
+erif;text-align:left;font-weight:normal">
+    <h1 class=3D"text-center no-margin" style=3D"margin-top:0;margin-bottom=
+:0;margin-left:0;margin-right:0;text-align:center">Positions Outside Reno/S=
+parks</h1>
+  </th>
+<th class=3D"expander" style=3D"font-family:&quot;Suisse Int'l&quot;, -appl=
+e-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica=
+ Neue&quot;, sans-serif;text-align:left;font-weight:normal;visibility:hidde=
+n;width:0;padding:0 !important"></th>
+</tr></table></th>
+</tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;ver=
+tical-align:top;text-align:left;padding:0;width:100%;position:relative;disp=
+lay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+  <th class=3D"small-12 large-12 columns first last" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;text-align:left;font-=
+weight:normal;margin:0 auto;padding-bottom:16px;width:536px;padding-left:32=
+px;padding-right:32px;padding-bottom:0px;padding-left:64px;padding-right:64=
+px"><table style=3D"border-spacing:0;border-collapse:collapse;padding:0;ver=
+tical-align:top;text-align:left;width:100%"><tr style=3D"padding:0;vertical=
+-align:top;text-align:left">
+<th style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-s=
+erif;text-align:left;font-weight:normal">
+    <div>
+<strong>The Nevada Division of State Parks </strong>has opened a spot for a=
+ <strong>Landscape Architecture Intern</strong> to assist improvement proje=
+cts across the state.&nbsp;This is a temporary full-time position designed =
+to provide valuable, hands-on experience with architecture.</div>
+  </th>
+<th class=3D"expander" style=3D"font-family:&quot;Suisse Int'l&quot;, -appl=
+e-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica=
+ Neue&quot;, sans-serif;text-align:left;font-weight:normal;visibility:hidde=
+n;width:0;padding:0 !important"></th>
+</tr></table></th>
+</tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;ver=
+tical-align:top;text-align:left;padding:0;width:100%;position:relative;disp=
+lay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+  <th class=3D"small-12 large-12 columns first last" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;text-align:left;font-=
+weight:normal;margin:0 auto;padding-bottom:16px;width:536px;padding-left:32=
+px;padding-right:32px;padding-bottom:0px;padding-left:64px;padding-right:64=
+px"><table style=3D"border-spacing:0;border-collapse:collapse;padding:0;ver=
+tical-align:top;text-align:left;width:100%"><tr style=3D"padding:0;vertical=
+-align:top;text-align:left">
+<th style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-s=
+erif;text-align:left;font-weight:normal">
+   =20
+      <table class=3D"radius button float-center" style=3D"border-spacing:0=
+;border-collapse:collapse;padding:0;vertical-align:top;text-align:left;floa=
+t:none;text-align:center;width:auto;margin:0 0 16px 0;margin:0 auto"><tr st=
+yle=3D"padding:0;vertical-align:top;text-align:left"><td style=3D"font-fami=
+ly:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe=
+ UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vertica=
+l-align:top;text-align:left"><table style=3D"border-spacing:0;border-collap=
+se:collapse;padding:0;vertical-align:top;text-align:left;width:100%"><tr st=
+yle=3D"padding:0;vertical-align:top;text-align:left"><td style=3D"font-fami=
+ly:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe=
+ UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vertica=
+l-align:top;text-align:left;color:#ffffff;background:#f73b33;border:2px sol=
+id #f73b33;background:#003580;border-color:#003580;color:white;border-radiu=
+s:3px;border:none"><a href=3D"https://email.mail.joinhandshake.com/c/eJxlj0=
+1uwyAQRk9j72rxa8iChZPWF-gBLAyTmNRAaqDnL3bTbiqNNNIbfTNvrJLSzLJ1iiCCEUOcIMow6=
+XAnhsvpgvg4nPHbiZxRw5DXbu3u0YVFB5sW_QGdib5dFMFYU2GMIZYhxIGDZLOQV8qYFsBJu6ol=
+50dq6NCQsVYJ2_9Fld_jnGpjXPRYioaOa9wa-opRQ_qS_ZRi2QxU4nVK0-4D23Pkwbri6wh2_IQ=
+mhgwhVyqJ7An_xdo_tLuFyktwU9bbDTLY6YimdlPXpK37LFCfDvClre52Y7ClzYqe2Mu7WWJc2z=
+_96fA54pOz6ufYN1zFcCQ" style=3D"color:#003580;font-family:&quot;Suisse Int'=
+l&quot;, Helvetica, Arial, sans-serif;font-size:15px;font-weight:bold;color=
+:#ffffff;text-decoration:none;display:inline-block;padding:10px 20px 10px 2=
+0px;border:0 solid #254fa5;border-radius:3px;border-color:#003580;color:whi=
+te">
+        Landscape Architecture Intern
+      </a></td></tr></table></td></tr></table>
+   =20
+  </th>
+<th class=3D"expander" style=3D"font-family:&quot;Suisse Int'l&quot;, -appl=
+e-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica=
+ Neue&quot;, sans-serif;text-align:left;font-weight:normal;visibility:hidde=
+n;width:0;padding:0 !important"></th>
+</tr></table></th>
+</tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;ver=
+tical-align:top;text-align:left;padding:0;width:100%;position:relative;disp=
+lay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+  <th class=3D"small-12 large-12 columns first last" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;text-align:left;font-=
+weight:normal;margin:0 auto;padding-bottom:16px;width:536px;padding-left:32=
+px;padding-right:32px;padding-bottom:0px;padding-left:64px;padding-right:64=
+px"><table style=3D"border-spacing:0;border-collapse:collapse;padding:0;ver=
+tical-align:top;text-align:left;width:100%"><tr style=3D"padding:0;vertical=
+-align:top;text-align:left">
+<th style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-s=
+erif;text-align:left;font-weight:normal">
+    <div>
+<strong>The Great Basin Institute</strong> is an interdisciplinary field st=
+udies organization that has many jobs open in fields related to conservatio=
+n practices.</div>
+  </th>
+<th class=3D"expander" style=3D"font-family:&quot;Suisse Int'l&quot;, -appl=
+e-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica=
+ Neue&quot;, sans-serif;text-align:left;font-weight:normal;visibility:hidde=
+n;width:0;padding:0 !important"></th>
+</tr></table></th>
+</tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;ver=
+tical-align:top;text-align:left;padding:0;width:100%;position:relative;disp=
+lay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+  <th class=3D"small-12 large-12 columns first last" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;text-align:left;font-=
+weight:normal;margin:0 auto;padding-bottom:16px;width:536px;padding-left:32=
+px;padding-right:32px;padding-bottom:0px;padding-left:64px;padding-right:64=
+px"><table style=3D"border-spacing:0;border-collapse:collapse;padding:0;ver=
+tical-align:top;text-align:left;width:100%"><tr style=3D"padding:0;vertical=
+-align:top;text-align:left">
+<th style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-s=
+erif;text-align:left;font-weight:normal">
+   =20
+      <table class=3D"radius button float-center" style=3D"border-spacing:0=
+;border-collapse:collapse;padding:0;vertical-align:top;text-align:left;floa=
+t:none;text-align:center;width:auto;margin:0 0 16px 0;margin:0 auto"><tr st=
+yle=3D"padding:0;vertical-align:top;text-align:left"><td style=3D"font-fami=
+ly:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe=
+ UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vertica=
+l-align:top;text-align:left"><table style=3D"border-spacing:0;border-collap=
+se:collapse;padding:0;vertical-align:top;text-align:left;width:100%"><tr st=
+yle=3D"padding:0;vertical-align:top;text-align:left"><td style=3D"font-fami=
+ly:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe=
+ UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vertica=
+l-align:top;text-align:left;color:#ffffff;background:#f73b33;border:2px sol=
+id #f73b33;background:#003580;border-color:#003580;color:white;border-radiu=
+s:3px;border:none"><a href=3D"https://email.mail.joinhandshake.com/c/eJw9kE=
+1ywyAMhU9j78pgsB2zYOGkzQV6AI8Mik1rIOUnmd6-OE07o9X39KQnaTkMah5qIxllDW1pxyhvG=
+0YachhP4kS783hs3gQ70qqlFsxGPrxxKzgdV_hEorytVyn4hVM9o5j7nmMr8NB3mtIeykxFhao3=
+uaZ0jRUfK3Yudb_fyS2q7xnD6mMybtknFWEJCGmGaNzeyM-bDxV_bZqK9TnZKfocFBZiIcZpz4P=
+hKVnUJtsi4Y6fUHmX0KVCBzb0rPvDYK9gFld4dmZKEBZMqKeHNdZBXiJo85WxHO3wBhpIdoGgzn=
+WSXLQv72r1fqv__zA98jzsk9Hyd9kPvM9x3A" style=3D"color:#003580;font-family:&q=
+uot;Suisse Int'l&quot;, Helvetica, Arial, sans-serif;font-size:15px;font-we=
+ight:bold;color:#ffffff;text-decoration:none;display:inline-block;padding:1=
+0px 20px 10px 20px;border:0 solid #254fa5;border-radius:3px;border-color:#0=
+03580;color:white">
+        Conservationist Application Website
+      </a></td></tr></table></td></tr></table>
+   =20
+  </th>
+<th class=3D"expander" style=3D"font-family:&quot;Suisse Int'l&quot;, -appl=
+e-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica=
+ Neue&quot;, sans-serif;text-align:left;font-weight:normal;visibility:hidde=
+n;width:0;padding:0 !important"></th>
+</tr></table></th>
+</tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;ver=
+tical-align:top;text-align:left;padding:0;width:100%;position:relative;disp=
+lay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+  <th class=3D"small-12 large-12 columns first last" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;text-align:left;font-=
+weight:normal;margin:0 auto;padding-bottom:16px;width:536px;padding-left:32=
+px;padding-right:32px;padding-bottom:0px;padding-left:64px;padding-right:64=
+px"><table style=3D"border-spacing:0;border-collapse:collapse;padding:0;ver=
+tical-align:top;text-align:left;width:100%"><tr style=3D"padding:0;vertical=
+-align:top;text-align:left">
+<th style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-s=
+erif;text-align:left;font-weight:normal">
+    <div>
+<strong>Nevada City Engineering</strong> in California seeks an <strong>Aut=
+ocad Draftsperson</strong>. Knowledge of autocad/GIS/a drafting program is =
+needed as well as knowledge of land use planning (zoning ordinances, master=
+ plans, planning and environmental studies).</div>
+  </th>
+<th class=3D"expander" style=3D"font-family:&quot;Suisse Int'l&quot;, -appl=
+e-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica=
+ Neue&quot;, sans-serif;text-align:left;font-weight:normal;visibility:hidde=
+n;width:0;padding:0 !important"></th>
+</tr></table></th>
+</tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;ver=
+tical-align:top;text-align:left;padding:0;width:100%;position:relative;disp=
+lay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+  <th class=3D"small-12 large-12 columns first last" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;text-align:left;font-=
+weight:normal;margin:0 auto;padding-bottom:16px;width:536px;padding-left:32=
+px;padding-right:32px;padding-bottom:0px;padding-left:64px;padding-right:64=
+px"><table style=3D"border-spacing:0;border-collapse:collapse;padding:0;ver=
+tical-align:top;text-align:left;width:100%"><tr style=3D"padding:0;vertical=
+-align:top;text-align:left">
+<th style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-s=
+erif;text-align:left;font-weight:normal">
+   =20
+      <table class=3D"radius button float-center" style=3D"border-spacing:0=
+;border-collapse:collapse;padding:0;vertical-align:top;text-align:left;floa=
+t:none;text-align:center;width:auto;margin:0 0 16px 0;margin:0 auto"><tr st=
+yle=3D"padding:0;vertical-align:top;text-align:left"><td style=3D"font-fami=
+ly:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe=
+ UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vertica=
+l-align:top;text-align:left"><table style=3D"border-spacing:0;border-collap=
+se:collapse;padding:0;vertical-align:top;text-align:left;width:100%"><tr st=
+yle=3D"padding:0;vertical-align:top;text-align:left"><td style=3D"font-fami=
+ly:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe=
+ UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vertica=
+l-align:top;text-align:left;color:#ffffff;background:#f73b33;border:2px sol=
+id #f73b33;background:#003580;border-color:#003580;color:white;border-radiu=
+s:3px;border:none"><a href=3D"https://email.mail.joinhandshake.com/c/eJxlj0=
+1uwyAQRk-Dd7X4M4EFCyetL9ADIAw0JjGQGuj5i920m0ojjfRG38wbKzk3M--8xBAjSOGAIaEI9=
+6g_jRdxgcM0ntGbwGcIKAzar_0t-bjoaPOi7643KXSLdAJRSrQg3DIjLJkNYhhDQRilnEHRrXIp=
+5ZEBGQGeWtW4_V_U-C3NubXmgdCJADKtaQPkFWGAWS1B5VQ34xoJOme1-7jtOQrO-hrayO34CU2=
+KxcXSKMec4eEX6_DQ_hobr9GrorerK86qI5q7TX5kbf1nde3p6L601f1u7GztiiSCvrybJaW1-9=
+NXh88RV97Kn2PfqARvag" style=3D"color:#003580;font-family:&quot;Suisse Int'l=
+&quot;, Helvetica, Arial, sans-serif;font-size:15px;font-weight:bold;color:=
+#ffffff;text-decoration:none;display:inline-block;padding:10px 20px 10px 20=
+px;border:0 solid #254fa5;border-radius:3px;border-color:#003580;color:whit=
+e">
+        Autocad Draftsperson
+      </a></td></tr></table></td></tr></table>
+   =20
+  </th>
+<th class=3D"expander" style=3D"font-family:&quot;Suisse Int'l&quot;, -appl=
+e-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica=
+ Neue&quot;, sans-serif;text-align:left;font-weight:normal;visibility:hidde=
+n;width:0;padding:0 !important"></th>
+</tr></table></th>
+</tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"48" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:48px;line-height:48px;">&nbsp;</td></tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"divider spacer " style=3D"border-spacing:0;border-collapse:=
+collapse;padding:0;vertical-align:top;text-align:left;width:100%;background=
+:#f5f5f5"><tr style=3D"padding:0;vertical-align:top;text-align:left"><td he=
+ight=3D"12" style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, B=
+linkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;=
+, sans-serif;padding:0;vertical-align:top;text-align:left;height:36px;mso-l=
+ine-height-rule:exactly;font-size:12px;line-height:12px;">&nbsp;</td></tr><=
+/table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;ver=
+tical-align:top;text-align:left;padding:0;width:100%;position:relative;disp=
+lay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+  <th class=3D"small-12 large-12 columns first last" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;text-align:left;font-=
+weight:normal;margin:0 auto;padding-bottom:16px;width:536px;padding-left:32=
+px;padding-right:32px;padding-bottom:0px;padding-left:64px;padding-right:64=
+px"><table style=3D"border-spacing:0;border-collapse:collapse;padding:0;ver=
+tical-align:top;text-align:left;width:100%"><tr style=3D"padding:0;vertical=
+-align:top;text-align:left">
+<th style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-s=
+erif;text-align:left;font-weight:normal">
+    <h2 class=3D"text-center no-margin" style=3D"margin-top:0;margin-bottom=
+:0;margin-left:0;margin-right:0;text-align:center">Log into Handshake to fi=
+nd more jobs &amp; internships!</h2>
+  </th>
+<th class=3D"expander" style=3D"font-family:&quot;Suisse Int'l&quot;, -appl=
+e-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica=
+ Neue&quot;, sans-serif;text-align:left;font-weight:normal;visibility:hidde=
+n;width:0;padding:0 !important"></th>
+</tr></table></th>
+</tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;ver=
+tical-align:top;text-align:left;padding:0;width:100%;position:relative;disp=
+lay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+  <th class=3D"small-12 large-12 columns first last" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;text-align:left;font-=
+weight:normal;margin:0 auto;padding-bottom:16px;width:536px;padding-left:32=
+px;padding-right:32px;padding-bottom:0px;padding-left:64px;padding-right:64=
+px"><table style=3D"border-spacing:0;border-collapse:collapse;padding:0;ver=
+tical-align:top;text-align:left;width:100%"><tr style=3D"padding:0;vertical=
+-align:top;text-align:left">
+<th style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-s=
+erif;text-align:left;font-weight:normal">
+   =20
+      <table class=3D"radius button float-center" style=3D"border-spacing:0=
+;border-collapse:collapse;padding:0;vertical-align:top;text-align:left;floa=
+t:none;text-align:center;width:auto;margin:0 0 16px 0;margin:0 auto"><tr st=
+yle=3D"padding:0;vertical-align:top;text-align:left"><td style=3D"font-fami=
+ly:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe=
+ UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vertica=
+l-align:top;text-align:left"><table style=3D"border-spacing:0;border-collap=
+se:collapse;padding:0;vertical-align:top;text-align:left;width:100%"><tr st=
+yle=3D"padding:0;vertical-align:top;text-align:left"><td style=3D"font-fami=
+ly:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe=
+ UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vertica=
+l-align:top;text-align:left;color:#ffffff;background:#f73b33;border:2px sol=
+id #f73b33;background:#003580;border-color:#003580;color:white;border-radiu=
+s:3px;border:none"><a href=3D"https://email.mail.joinhandshake.com/c/eJxlj0=
+tywyAQBU8Du6gAIQktWMh2dIEcgEIwtkgkcPjk_MGKk02qZtVTb16PlUKYRWAnGWGUcNIx0nLKG=
+toM03k8k26eTvR1ZCeCONm125r34PyqvU2r_oDGhB2vksLCORnMQjuwvRXL0C_QCaPHnhrCrniT=
+a873hNoJsblO8fH_IdTOW4iovdAWsb7kXaVQooFKdp2SetRDfK52sK7UyAUe-AlN8Bl8rlQw0bP=
+uF-v9rt3NV168U1nHG2Sw6ogmHOU1aes-C9QfPXxpq5uHINiCs2xH_vJm1hA2_GerDp8jrpyVP2=
+Xfw1psYA" style=3D"color:#003580;font-family:&quot;Suisse Int'l&quot;, Helv=
+etica, Arial, sans-serif;font-size:15px;font-weight:bold;color:#ffffff;text=
+-decoration:none;display:inline-block;padding:10px 20px 10px 20px;border:0 =
+solid #254fa5;border-radius:3px;border-color:#003580;color:white">
+        Log in to Handshake (NetID)
+      </a></td></tr></table></td></tr></table>
+   =20
+  </th>
+<th class=3D"expander" style=3D"font-family:&quot;Suisse Int'l&quot;, -appl=
+e-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica=
+ Neue&quot;, sans-serif;text-align:left;font-weight:normal;visibility:hidde=
+n;width:0;padding:0 !important"></th>
+</tr></table></th>
+</tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"divider spacer " style=3D"border-spacing:0;border-collapse:=
+collapse;padding:0;vertical-align:top;text-align:left;width:100%;background=
+:#f5f5f5"><tr style=3D"padding:0;vertical-align:top;text-align:left"><td he=
+ight=3D"12" style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, B=
+linkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;=
+, sans-serif;padding:0;vertical-align:top;text-align:left;height:36px;mso-l=
+ine-height-rule:exactly;font-size:12px;line-height:12px;">&nbsp;</td></tr><=
+/table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;ver=
+tical-align:top;text-align:left;padding:0;width:100%;position:relative;disp=
+lay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+  <th class=3D"small-12 large-12 columns first last" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;text-align:left;font-=
+weight:normal;margin:0 auto;padding-bottom:16px;width:536px;padding-left:32=
+px;padding-right:32px;padding-bottom:0px;padding-left:64px;padding-right:64=
+px"><table style=3D"border-spacing:0;border-collapse:collapse;padding:0;ver=
+tical-align:top;text-align:left;width:100%"><tr style=3D"padding:0;vertical=
+-align:top;text-align:left">
+<th style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-s=
+erif;text-align:left;font-weight:normal">
+    <h2 class=3D"no-margin" style=3D"margin-top:0;margin-bottom:0;margin-le=
+ft:0;margin-right:0">Connect With Us</h2>
+  </th>
+<th class=3D"expander" style=3D"font-family:&quot;Suisse Int'l&quot;, -appl=
+e-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica=
+ Neue&quot;, sans-serif;text-align:left;font-weight:normal;visibility:hidde=
+n;width:0;padding:0 !important"></th>
+</tr></table></th>
+</tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;ver=
+tical-align:top;text-align:left;padding:0;width:100%;position:relative;disp=
+lay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+  <th class=3D"small-12 large-12 columns first last" style=3D"font-family:&=
+quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&=
+quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;text-align:left;font-=
+weight:normal;margin:0 auto;padding-bottom:16px;width:536px;padding-left:32=
+px;padding-right:32px;padding-bottom:0px;padding-left:64px;padding-right:64=
+px"><table style=3D"border-spacing:0;border-collapse:collapse;padding:0;ver=
+tical-align:top;text-align:left;width:100%"><tr style=3D"padding:0;vertical=
+-align:top;text-align:left">
+<th style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacS=
+ystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-s=
+erif;text-align:left;font-weight:normal">
+    <div>
+<strong>=C2=B7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Facebook</strong>: <a hre=
+f=3D"https://email.mail.joinhandshake.com/c/eJw9kE1ywyAMhU9j78oAtmO8YJGkzQV=
+6AI8AJaYxkPKTXL84TTuj1ff0pCcZKYRWorWSU85oTwdOu55xwsi4P05HOpz2B_Yx8QNteurAru=
+QrWL-AN2mBKxIdXLtIg4rtei0YVZ0SmvIRAfRoJqWGUY-0XeWS8y013b7hp1qPx4OcQaMK4brNq=
+MjfNUTEmHIxNmxt3WkNseneWd_wXcluTqFEjZU4SGne0mB8SQ6NLa5KuOEX1MFn9LlSwcWOD38Y=
+3A3sxVdevJ0zxAtmNPPTmtoozwmM_S5YT_Z4BwOk-EjQlDbLburfPvUSwtr-f2F-5nnaZ2vk77I=
+fVb1xog" target=3D"_blank" style=3D"color:#003580">fb.com/nvcareerstudio</a=
+>
+</div>
+<div>
+<strong>=C2=B7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Twitter</strong>: <a href=
+=3D"https://email.mail.joinhandshake.com/c/eJw9kE1ygzAMhU8DuzLGBmMWXpC0uUAP=
+wAhbBLfYTv2TXr8mTTujhfRpnvQkLYVQi6iNpIS2pCM9JaxradM2w3Qez6S_TKf2baQnUnXEgtm=
+bD2_cBk7HDT6xUd7WmxyRaT4ua9-vfTsslA-cLcOwIuViBS7qXW4p3WLFpopeSqRvkxKGQ14qd1=
+cQEENMWRtfscsO7lqxV3QV5bsPJW37kuZk5-hzUFiIhRjnwxGGZ8uiNtkeugM_ofIuoUuFCio4_=
+RujwN7AXF3h2Zk5QbhiQj0_pLEOco2gzVfGcrbDO2hosgsN6lwnycbu5V1t3u_1_yfmh5-HfDZa=
+_i77AXfUclg" target=3D"_blank" style=3D"color:#003580">@nvcareerstudio</a>
+</div>
+<div>
+<strong>=C2=B7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Instagram</strong>: <a hr=
+ef=3D"https://email.mail.joinhandshake.com/c/eJw9kE1ywjAMhU-T7OpxnGCShReBlg=
+v0ABlhKcQ0tql_4Pp1KO2MVt_Tk56Equ_1ua-NElw0vOM7wduuEaxh-_E4HPnuNB6aj0EceNVxC=
+2ZlV2_cAg7jAl_EtLf1omiGWSLiWc7NvJeahB4EctnNZw7YYr2qJaVbrNqxEqdSj8eDGRcTXALY=
+bUhh7q4hEIWYMhq_9bWn1YeqfW9kJWROdoo-B02FWIhx2uJQeEmW0GRbJNrwC2rvErlUaC96KXZ=
+_GOwNzMUVnp2ZEoQLJcLpaY11UHMENN-Zys2O7oDAsguMMNdJtUP39qkX79f6_w3TM8_TPhlUv8=
+t-AMoJcvs" target=3D"_blank" style=3D"color:#003580">@nvcareerstudio</a>
+</div>
+<div>
+<strong>=C2=B7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email</strong>: <a href=
+=3D"mailto:nvcareerstudio@unr.edu" target=3D"_blank" style=3D"color:#003580=
+">nvcareerstudio@unr.edu</a>
+</div>
+<div>
+<strong>=C2=B7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Website</strong>: <a href=
+=3D"https://email.mail.joinhandshake.com/c/eJw9j01ywyAMhU9jdmUA_5EFCyetL9AD=
+MAqQmNZAyk99_WK36Yw2-p6e9KQF5-rKkRWMMEo60jPSdpRhisfpcrqQfp7O9O3EzqTpiAO74o9=
+g_QJepwU-DVbBoUWMI2eUcc5v-qpgVCODuof0AyW6Io1WseT8SE07NWyutW0bLj5io0vtFERj4q=
+608xpi075S3rChZCdTKFGZShykJPcA--AhOaNtcVUyO_6DKvhsfK6UMz6w_onBPcDefeXFW5kh3=
+k02Wh7WhKK4JdD2q5j6pTffoOEZD2XRnrqXd7WEsKL_x-WR57BLq8XvsR9312u7" target=3D"=
+_blank" style=3D"color:#003580">unr.edu/career</a>
+</div>
+<div>
+<strong>=C2=B7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone</strong>: (775) 682=
+-7114</div>
+<div><br></div>
+<div>The Nevada Career Studio (NCS) is the central career services office o=
+n campus. Need help with your application materials?&nbsp;<a href=3D"https:=
+//email.mail.joinhandshake.com/c/eJxlj01yhCAQhU-ju1jYoIEFC2cSL5ADWAy0I4mAEc=
+j5gxOTTap69fWr92Mk5_rGayuBQEsY6YBQ1kLTNs_DVVxJNw6X9lXAhVSMOGXX5j1Yvyhv4qI-s=
+NHB1YskBDWqWQMUC0FnoEwIxucbn9uZ9129yiWlLVZ0qGAsl_3-36hwtW2FJoc-FfG4hr2iL20F=
+fU5uiiHvGgtwKsbpKIP7-XJobHblhQc-oVZuU_buC87eTkntd0xopocmFtFpL371wacSXBAH3kN=
+X73KOytjPjGW8xy9lVHM0R5PrJKlgT296CWGt_2ZMj2qPgMka-ePzDawPdEU" target=3D"_bl=
+ank" style=3D"color:#003580"><strong>Request a Virtual Appointment on Hands=
+hake</strong></a>. </div>
+<div><br></div>
+<div>For in-person needs, our Career Mentors are at the Nevada Career Studi=
+o in PSAC 208 to help you. No appointment needed=E2=80=94just wear your fac=
+e mask.&nbsp;<strong>Visit&nbsp;</strong><a href=3D"https://email.mail.join=
+handshake.com/c/eJw9UFtywyAMPI39Fw_G7w8-krS5QA_gkUGJSQ2kPOLrV3aTzjCMWK12Fyn=
+R93Lqcy044yWrWcNZVZe8KIvueB7OrLkcT-XnwE8sq5kBvRR3p-0MVoUZvrGQzuSzuFYltDDJch=
+qkhHa7sZOA3bWfmMImX8Qc4yNk1THjFzrruhbJ-gJVopcEj-ipCDEptDFQObvkw4F8DgH9U0uk4=
+cvifFZ98Iy3KZoxEEUiAQZCGLdwm8jeMqh0MtTCDX6BEswD9M0SnKweI_gbRlTjziHP9iXP3nxn=
+I6UhqOd9y5vci2sApX8S0jIsPkHB-xd5FNVQH77k7NyS_-9n3KPtBqNW4k_nF5cbexQ" target=
+=3D"_blank" style=3D"color:#003580"><strong>our website</strong></a><strong=
+>&nbsp;for hours of operation.</strong>
+</div>
+  </th>
+<th class=3D"expander" style=3D"font-family:&quot;Suisse Int'l&quot;, -appl=
+e-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica=
+ Neue&quot;, sans-serif;text-align:left;font-weight:normal;visibility:hidde=
+n;width:0;padding:0 !important"></th>
+</tr></table></th>
+</tr></table>
+<table class=3D"spacer " style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td height=3D"36" style=3D"font-f=
+amily:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont, &quot;Se=
+goe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padding:0;vert=
+ical-align:top;text-align:left;height:36px;mso-line-height-rule:exactly;fon=
+t-size:36px;line-height:36px;">&nbsp;</td></tr></table>
+<table class=3D"wrapper" style=3D"border-spacing:0;border-collapse:collapse=
+;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"padd=
+ing:0;vertical-align:top;text-align:left"><td class=3D"wrapper-inner" style=
+=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystemFont=
+, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;padd=
+ing:0;vertical-align:top;text-align:left">
+  <div style=3D"text-align:center;" class=3D"float-center"><img src=3D"http=
+s://s3.amazonaws.com/handshake.production/app/public/assets/user_images/157=
+7937/original/data.?1597798906" alt=3D"End" style=3D"outline:none;text-deco=
+ration:none;-ms-interpolation-mode:bicubic;width:auto;max-width:100%;clear:=
+both;display:block;margin:0 auto;float:none;text-align:center;max-width:100=
+%;width:600px;" width=3D"600" class=3D"float-center"></div>
+</td></tr></table>
+
+</td></tr></table>
+<table class=3D"container" style=3D"border-spacing:0;border-collapse:collap=
+se;padding:0;vertical-align:top;text-align:left;background:#ffffff;width:60=
+0px;margin:0 auto;text-align:inherit"><tr style=3D"padding:0;vertical-align=
+:top;text-align:left"><td style=3D"font-family:&quot;Suisse Int'l&quot;, -a=
+pple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvet=
+ica Neue&quot;, sans-serif;padding:0;vertical-align:top;text-align:left">
+  <table class=3D"divider spacer " style=3D"border-spacing:0;border-collaps=
+e:collapse;padding:0;vertical-align:top;text-align:left;width:100%;backgrou=
+nd:#f5f5f5"><tr style=3D"padding:0;vertical-align:top;text-align:left"><td =
+height=3D"12" style=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system,=
+ BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quo=
+t;, sans-serif;padding:0;vertical-align:top;text-align:left;height:36px;mso=
+-line-height-rule:exactly;font-size:12px;line-height:12px;">&nbsp;</td></tr=
+></table>
+  <table class=3D"row" style=3D"border-spacing:0;border-collapse:collapse;v=
+ertical-align:top;text-align:left;padding:0;width:100%;position:relative;di=
+splay:table"><tr style=3D"padding:0;vertical-align:top;text-align:left">
+    <table class=3D"wrapper" style=3D"border-spacing:0;border-collapse:coll=
+apse;padding:0;vertical-align:top;text-align:left;width:100%"><tr style=3D"=
+padding:0;vertical-align:top;text-align:left"><td class=3D"wrapper-inner" s=
+tyle=3D"font-family:&quot;Suisse Int'l&quot;, -apple-system, BlinkMacSystem=
+Font, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, sans-serif;=
+padding:0;vertical-align:top;text-align:left">
+  <p class=3D"text-center footer" style=3D"text-align:center;margin:12px au=
+to 24px;font-size:12px;line-height:20px;width:80%;color:rgba(8,8,8,0.79);hy=
+phens:none;margin:12px auto 12px">
+    This email is being sent to Farhan Sadique at University of Nevada, Ren=
+o.
+    <br>
+    <a href=3D"https://link.mailgun.com/u/eJw9zUESgiAUANDTxC7m8wWEBQt16gIdw=
+PkCjZTCJNn5s00XeC84Y_xkWHIIKECCQmikQC542w12AHXtenGx2MNJwkpp4Y-S8kw51Jmekfuy=
+stmR0nQwstUtTUpLHwEjhIiNuVvhkW3uXimk1x4PJscPBeJ73ngMO3u7xsrzzc-lLOwvjyvVOsZ=
+fOabgDBqN6gs87TW6" style=3D"color:#003580">Unsubscribe</a> =E2=80=A2
+    <a href=3D"https://email.mail.joinhandshake.com/c/eJxlTztuhDAUPA3uYj0b_=
+yhcsKvsBfYAyJ-HcBZsgmHPH6dJE2mkGU0xn2iNCd6QZDlwBgIkh14wThnV4324g3yMN_Y58Bt0=
+AjaXVvpVUl5cjnVxL6ShbGSxOGvPNHgedM-UCl6wWaFHEEpKoQey2uU899r1Y8cfDW7f_wc1_6p=
+41MaDYKAZayqXM80puDOVPO0HznhgDljJYefqYvq-sC3L-HbR0SsfFONFTtsP4uMZllJW8tcxba=
+7WCX9fTClaw43i8gfNvFHQ" style=3D"color:#003580">Update preferences</a>
+    <br>
+    P.O. Box 40770, San Francisco, CA 94140
+  </p>
+</td></tr></table>
+
+  </tr></table>
+</td></tr></table>
+
+
+</td>
+</tr>
+</table>
+<img width=3D"1px" height=3D"1px" alt=3D"" src=3D"https://email.mail.joinha=
+ndshake.com/o/eJw9zUESgiAUANDTxC7m8wWEBQt16gIdwPkCjZTCJNn5s00XeC84Y_xkWHIIK=
+ECCQmikQC542w12AHXtenGx2MNJwkpp4Y-S8kw51JmekfuystmR0nQwstUtTUpLHwEjhIiNuVvh=
+kW3uXimk1x4PJscPBeJ73ngMO3u7xsrzzc-lLOwvjyvVOsZfOabgDBqN6gs87TW6"></body>
+</html>
+
+--538429b15b95401a8498cca427e3d0e1--
