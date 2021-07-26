@@ -33,10 +33,11 @@ jobs:
         with:
           python-version: 3.9
           
-      - uses: actions/checkout@master
+      - name: Check out Tahoe
+        uses: actions/checkout@master
         with:
-          name: CYBEX-P/tahoe
-          ref: refs/heads/release
+          repository: CYBEX-P/tahoe
+          token: ${{ secrets.my_pat }}
                 
       - name: Upgrade PIP & Install Dependencies
         run: |
