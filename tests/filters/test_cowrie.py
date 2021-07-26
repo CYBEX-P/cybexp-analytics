@@ -55,7 +55,6 @@ class CowireTest(unittest.TestCase):
             if not d:
                 continue
             m = json.loads(d)['data']['message']
-            print(m)
             raw_ref = c.parse(m, orgid, timezone)
             if raw_ref == False:
                 continue
